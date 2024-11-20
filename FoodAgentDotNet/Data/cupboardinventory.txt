@@ -1,0 +1,38 @@
+salt
+pepper
+olive oil
+garlic
+onions
+tomatoes
+eggs
+milk
+butter
+cheese
+bread
+pasta
+rice
+flour
+sugar
+baking powder
+chicken
+beef
+carrots
+potatoes
+lettuce
+apples
+bananas
+oranges
+basil
+oregano
+thyme
+rosemary
+cinnamon
+cumin
+paprika
+turmeric
+ginger
+nutmeg
+salsa
+guacamole
+chili
+ground beef
