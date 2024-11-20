@@ -1,4 +1,0 @@
-Return a single word that represents the cuisine of the requested meal that is sent: {{$cuisine}}.
-
-For example, if the meal is mac and cheese, return American. Or for pizza it would be Italian.
-Do not return any extra words, just return the single name of the cuisine.
