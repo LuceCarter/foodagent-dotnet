@@ -20,11 +20,7 @@ export OPENAI_API_KEY="<YOUR OPEN AI API KEY>"
 The sample data available from MongoDB for restaurants does not have a field for embeddings yet. Thankfully, Semantic Kernel is able to generate embeddings for us using OpenAI or Azure OpenAI. In ```Program.cs``` you will find a method called ```GenerateEmbeddingsForCuisine()```.
 This needs to be called just ONCE, the first time you run the application. This will go ahead and fetch documents (currently set to 1000 documents) from the sample_restaurants database, restaurants collection, generate the embeddings and then save them in a collection called *embedded_cuisines* in the format that Semantic Kernel can work with.
 
-## Runniong the application
-
-
-
-## Running the application
+## Running the application
 
 1. Ensure you have added the required environment variables
 2. Run ```dotnet build``` using the DotNET SDK or inside an IDE such as Visual Studio.
