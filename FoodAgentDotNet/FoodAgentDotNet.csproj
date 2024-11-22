@@ -21,7 +21,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
     <PackageReference Include="Microsoft.SemanticKernel" Version="1.29.0" />
-    <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureOpenAI" Version="1.29.0" />
     <PackageReference Include="Microsoft.SemanticKernel.Connectors.MongoDB" Version="1.29.0-preview" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.29.0-alpha" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.Memory" Version="1.29.0-alpha" />

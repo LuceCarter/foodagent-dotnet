@@ -6,27 +6,14 @@ using Microsoft.SemanticKernel.Connectors.MongoDB;
 using Microsoft.SemanticKernel.Memory;
 using MongoDB.Driver;
 
-string apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
-string modelName = Environment.GetEnvironmentVariable("OPENAI_MODEL_NAME");
+string apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? throw new ArgumentNullException("Environment.GetEnvironmentVariable(\"OPENAI_API_KEY\")");
+string modelName = Environment.GetEnvironmentVariable("OPENAI_MODEL_NAME") ?? "gpt-4o-mini";
 
 var builder = Kernel.CreateBuilder();
 
 builder.Services.AddOpenAIChatCompletion(
     modelName,
     apiKey);
-
-/*
- * Uncomment this section if you are using Azure OpenAI.
- * Be sure to update any environment variables with your own values.
- */
-
-// string deploymentName = Environment.GetEnvironmentVariable("AZURE_OPENAI_DEPLOYMENT_NAME");
-// string endPoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
-// builder.Services.AddAzureOpenAIChatCompletion(
-//     deploymentName,
-//     endPoint,
-//     apiKey,
-//     modelName);
 
 var kernel = builder.Build();
 
@@ -127,10 +114,10 @@ async Task GenerateEmbeddingsForCuisine()
         "text-embedding-3-small",
         apiKey
     );
-
+    
     memoryBuilder.WithMemoryStore(mongoDBMemoryStore);
     var memory = memoryBuilder.Build();
-
+    
     // This fetches and saves 1000 docouments into our memory store for a bigger sample but you can always adjust this number up or down.
     var restaurants = await collection.Find(r => true).Limit(1000).ToListAsync();
 
