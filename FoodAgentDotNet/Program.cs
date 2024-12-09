@@ -32,7 +32,8 @@ async Task GenerateEmbeddingsForCuisine()
 
     // This fetches and saves 1000 docouments into our memory store for a bigger sample but you can always adjust this number up or down.
     var restaurants = await collection.Find(r => true).Limit(1000).ToListAsync();
-
+    int processedDocuments = 0;
+    
     foreach (var restaurant in restaurants)
     {
         try
@@ -52,5 +53,8 @@ async Task GenerateEmbeddingsForCuisine()
         {
             Console.WriteLine(e.Message);
         }
+        
+        processedDocuments++;
+        Console.WriteLine($"Processed {processedDocuments}/1000 documents");
     }
 }
