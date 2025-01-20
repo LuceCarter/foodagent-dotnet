@@ -39,8 +39,18 @@ OpenAIPromptExecutionSettings settings = new()
  */
 //await GenerateEmbeddingsForCuisine();
 
+while (true)
+{
+    Console.WriteLine("Press 'X' then [Enter] at any time to exit the program.");
 Console.WriteLine("What would you like to make for dinner?");
 var input = Console.ReadLine();
+
+// If the user wants to quit, break out of the loop
+if (!string.IsNullOrWhiteSpace(input) && input.Equals("x", StringComparison.OrdinalIgnoreCase))
+{
+    Console.WriteLine("Exiting the program...");
+    break;
+}
 
 string ingredientsPrompt = @"This is a list of ingredients available to the user:
 {{IngredientsPlugin.GetIngredientsFromCupboard}}
@@ -148,4 +158,5 @@ async Task GenerateEmbeddingsForCuisine()
     
     Console.WriteLine("\nProcessing complete.");
 
+}
 }
